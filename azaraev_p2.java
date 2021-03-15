@@ -21,27 +21,31 @@ public class azaraev_p2{
             directionList[i] = letter;
             i++;
 	}
+	String marble = ""+marbleTypes;
+	char[] marb=marble.toCharArray();
 	System.out.print(directionList);
-	char marb = '0';
+
 	char whichChute = '0';
-	for(int x = 0; x<marbleTypes.length(); x++){
+	for(int x = 0; x<marb.length; x++){
 	    //char whichChute = '0';
-	    if(marb == '0'){
+	    if(marb[x] == '0'){
 		if(directionList[0] == 'L'){
 		    directionList[0] = 'C';
-		    directionList[1] = 'R';
-		    System.out.print("->");
-		    System.out.print(directionList);
-		    whichChute = 'B';
-		}//changes to center if on left and 0
-		else if(directionList[1] == 'R'){
-		    directionList[1] = 'L';
-		    System.out.print("->");
-		    System.out.print(directionList);
-		    whichChute = 'C';
+		    if(directionList[1] == 'L'){
+			directionList[1] = 'R';
+		    	System.out.print("->");
+		    	System.out.print(directionList);
+		    	whichChute = 'B';
+		    }//changes to center if on left and 0
+		    else if(directionList[1] == 'R'){
+		    	directionList[1] = 'L';
+		    	System.out.print("->");
+		    	System.out.print(directionList);
+		    	whichChute = 'C';
+		    }
 		}
 		else if(directionList[0] == 'R'){
-			directionList[0] = 'C';
+			directionList[0] = 'L';
 			if(directionList[3] == 'R'){  //x4
 			    directionList[3] = 'L';
 			    System.out.print("->");
@@ -56,7 +60,7 @@ public class azaraev_p2{
                         }//if it starts to the left its gonna be E
 		}
 		else if(directionList[0] == 'C'){
-		    directionList[0] = 'L';
+		    directionList[0] = 'R';
 		    if(directionList[2] == 'L'){
 			directionList[2] = 'R';
 			System.out.print("->");
@@ -71,7 +75,7 @@ public class azaraev_p2{
 		    }
 		}
 	    }
-	    else if (marb == '1'){
+	    else if (marb[x] == '1'){
 		if(directionList[0] == 'L'){
                     directionList[0] = 'R';// if left u go to right
 		    if(directionList[1] == 'L'){
@@ -87,9 +91,9 @@ public class azaraev_p2{
                         whichChute = 'C';
                     }
 		}
-                else if(directionList[1] == 'R'){
+                else if(directionList[0] == 'R'){
 		    //should this be directionList[0]???
-                    directionList[1] = 'L'; //C?
+                    directionList[0] = 'C'; //C?
 		    if(directionList[3] == 'L'){
 			directionList[3] = 'R';
 			System.out.print("->");
