@@ -124,6 +124,6 @@ public class azaraev_p2{
                 }
 	    }
 	}
-	System.out.print(" "+ whichChute+ " ");
+	System.out.print(" "+ whichChute+ "\n");
     }
 }
